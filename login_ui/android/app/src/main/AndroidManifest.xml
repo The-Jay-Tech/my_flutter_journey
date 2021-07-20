@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.login_ui">
+    package="com.obounce.safeyroad">
    <application
-        android:label="login_ui"
+        android:label="Safey Road"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
