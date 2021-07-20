@@ -9,7 +9,7 @@ class AppTextStyle {
     color: Colors.indigo[900],
   );
   final subTitleStyle = GoogleFonts.inter(
-    fontSize: 15,
+    fontSize: 16,
     height: 1.2,
     color: Colors.indigo[600],
   );
