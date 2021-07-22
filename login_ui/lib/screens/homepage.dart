@@ -18,9 +18,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        // width: MediaQuery.of(context).size.width,
-        // height: MediaQuery.of(context).size.height,
-        // padding: EdgeInsets.all(16),
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage(AppImages.bacground), fit: BoxFit.cover),
@@ -46,11 +43,10 @@ class _HomePageState extends State<HomePage> {
                       fit: BoxFit.cover),
                 ),
                 child: Column(
-                  // mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'HELLO',
+                      'Safey Road',
                       style: AppTextStyle().titleStyle,
                     ),
                     Text(

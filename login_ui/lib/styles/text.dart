@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyle {
   final titleStyle = GoogleFonts.notoSans(
-    fontSize: 60,
+    fontSize: 55,
     fontWeight: FontWeight.w900,
     height: 1.2,
     color: Colors.indigo[900],
