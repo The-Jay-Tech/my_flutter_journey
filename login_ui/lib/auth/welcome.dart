@@ -6,14 +6,14 @@ import 'package:login_ui/styles/images.dart';
 import 'package:login_ui/styles/text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
