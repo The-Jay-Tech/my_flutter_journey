@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_ui/styles/colors.dart';
 import 'package:login_ui/styles/images.dart';
+import 'package:login_ui/widgets/textfield.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class _SignInState extends State<SignIn> {
                   borderRadius: BorderRadius.circular(23),
                 ),
                 child: Container(
-                  padding: EdgeInsets.fromLTRB(12, 25, 12, 32),
+                  padding: EdgeInsets.fromLTRB(6, 25, 6, 32),
                   width: 320,
                   decoration: BoxDecoration(
                     color: Color(0xFF251734).withOpacity(0.3),
@@ -42,100 +43,97 @@ class _SignInState extends State<SignIn> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 140, left: 10, right: 10),
-                        child: Column(
-                          children: [
-                            TextFormField(
-                              decoration: InputDecoration(
-                                labelText: 'Email Address',
-                                hintText: 'Enter your email address',
-                                fillColor: Colors.blueGrey[50],
-                                isDense: true,
-                                enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(23),
-                                  borderSide:
-                                      BorderSide(color: Color(0xFFEEEEEE)),
-                                ),
-                                filled: true,
-                                border: OutlineInputBorder(
-                                  borderSide:
-                                      BorderSide(style: BorderStyle.none),
-                                  borderRadius: const BorderRadius.all(
-                                    Radius.circular(23),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 14),
-                            TextFormField(
-                              decoration: InputDecoration(
-                                border: InputBorder.none,
-                                focusedBorder: InputBorder.none,
-                                enabledBorder: InputBorder.none,
-                                errorBorder: InputBorder.none,
-                                disabledBorder: InputBorder.none,
-                                hintText: 'Password',
-                              ),
-                            ),
-                          ],
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(top: 140, left: 10, right: 10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AppTextField(
+                          controller: null,
+                          label: 'Email Address',
+                          hintText: 'Enter your email address',
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(50, 30, 50, 60),
-                        child: MaterialButton(
+                        SizedBox(height: 14),
+                        AppTextField(
+                          controller: null,
+                          label: 'Password',
+                          hintText: 'Enter password',
+                          obscureText: true,
+                        ),
+                        SizedBox(height: 30),
+                        MaterialButton(
                           onPressed: () {},
-                          color: Colors.blue[900],
+                          minWidth: double.infinity,
+                          color: AppColor.blue,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                           ),
                           padding: EdgeInsets.fromLTRB(0, 15, 0, 15),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'Sign In',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15,
-                                ),
-                              ),
-                            ],
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        child: Text('Forget Password?',
-                            style: TextStyle(color: Colors.blue[900])),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            socialIcon(),
-                            googleIcon(),
-                          ],
+                        SizedBox(height: 20),
+                        Row(
+                          children: List.generate(
+                            150 ~/ 1,
+                            (index) => Expanded(
+                              child: Container(
+                                color: index % 5 == 0
+                                    ? Colors.transparent
+                                    : AppColor.blue,
+                                height: 1,
+                              ),
+                            ),
+                          ),
                         ),
-                      ),
-                      Container(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Don't have an account? ",
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                )),
-                            Text('Sign Up',
-                                style: TextStyle(color: Colors.blue[900])),
-                          ],
-                        ),
-                      ),
-                    ],
+                        // Row(
+                        //   children: [
+                        //     socialIcon(),
+                        //     googleIcon(),
+                        //   ],
+                        // ),
+                        MaterialButton(
+                          onPressed: () {},
+                          color: AppColor.blue,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: Row(  
+                            children: [
+                              CircleAvatar(
+                                radius: 25,
+                                backgroundImage:
+                                    AssetImage(AppImages.facebookIcon),
+                              ),
+                              Text('Google'),
+                            ],
+                          ),
+                        )
+                        // Container(
+                        //   child: Text('Forget Password?',
+                        //       style: TextStyle(color: Colors.blue[900])),
+                        // ),
+                        // Container(
+                        //   child: Row(
+                        //     mainAxisAlignment: MainAxisAlignment.center,
+                        //     children: [
+                        //       Text("Don't have an account? ",
+                        //           style: TextStyle(
+                        //             color: Colors.grey,
+                        //           )),
+                        //       Text('Sign Up',
+                        //           style: TextStyle(color: Colors.blue[900])),
+                        //     ],
+                        //   ),
+                        // ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -148,20 +146,15 @@ class _SignInState extends State<SignIn> {
 }
 
 Widget socialIcon() {
-  return Padding(
-    padding: const EdgeInsets.fromLTRB(2, 10, 2, 20),
-    child: Container(
-      alignment: Alignment.bottomLeft,
-      height: 40,
-      width: 120,
-      child: MaterialButton(
-        height: 4,
-        minWidth: 2,
-        onPressed: () {},
-        color: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+  return Container(
+    height: 40,
+    width: 120,
+    child: MaterialButton(
+      onPressed: () {},
+      color: Colors.white,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+      child: FittedBox(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               height: 70,
@@ -183,18 +176,14 @@ Widget socialIcon() {
 }
 
 Widget googleIcon() {
-  return Padding(
-    padding: const EdgeInsets.fromLTRB(2, 10, 2, 20),
-    child: Container(
-      alignment: Alignment.centerLeft,
-      height: 40,
-      width: 120,
-      child: MaterialButton(
-        height: 4,
-        minWidth: 2,
-        onPressed: () {},
-        color: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+  return Container(
+    height: 40,
+    width: 120,
+    child: MaterialButton(
+      onPressed: () {},
+      color: Colors.white,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+      child: FittedBox(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [

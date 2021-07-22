@@ -5,7 +5,7 @@ class AppTextField extends StatelessWidget {
   final TextInputType? keyboardType;
   final String? hintText, label;
   final String? Function(String?)? onFieldSubmit, validator;
-  final bool obscureText = false;
+  final bool? obscureText;
   final FocusNode? focusNode;
   const AppTextField(
       {Key? key,
@@ -15,7 +15,8 @@ class AppTextField extends StatelessWidget {
       required this.label,
       this.onFieldSubmit,
       this.validator,
-      this.focusNode})
+      this.focusNode,
+      this.obscureText})
       : super(key: key);
 
   @override
@@ -24,7 +25,7 @@ class AppTextField extends StatelessWidget {
       controller: controller,
       keyboardType: keyboardType,
       focusNode: focusNode,
-      obscureText: obscureText,
+      obscureText: obscureText == null ? false : obscureText!,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       onFieldSubmitted: onFieldSubmit,
       validator: validator,

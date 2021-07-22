@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
       initialRoute: '/welcome',
-      onGenerateRoute: (route) {},
+      // onGenerateRoute: (route) {},
       routes: {
         '/welcome': (context) => WelcomeScreen(),
         '/get-started': (context) => SignIn(),
