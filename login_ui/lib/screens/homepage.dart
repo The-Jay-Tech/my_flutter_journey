@@ -54,12 +54,7 @@ class _HomePageState extends State<HomePage> {
                     MaterialButton(
                       minWidth: double.infinity,
                       onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (_) => SignIn(),
-                          ),
-                        );
+                        Navigator.pushNamed(context, '/get-started');
                       },
                       color: Colors.blue[900],
                       shape: RoundedRectangleBorder(
