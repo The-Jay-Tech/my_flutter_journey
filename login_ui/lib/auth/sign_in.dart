@@ -19,42 +19,39 @@ class _SignInState extends State<SignIn> {
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 25, bottom: 25),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 25, bottom: 25),
+          child: Center(
             child: Card(
               elevation: 1,
-              color: Color(0xFF251734).withOpacity(1.0),
-              margin: EdgeInsets.only(left: 32, right: 32),
+              color: Color(0xFF251734).withOpacity(0.3),
+              margin: EdgeInsets.only(left: 25, right: 25),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(23),
               ),
               child: Container(
+                padding: EdgeInsets.fromLTRB(12, 25, 12, 32),
+                width: 320,
                 decoration: BoxDecoration(
+                  color: Color(0xFF251734).withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(23),
                   image: DecorationImage(
                     image: AssetImage(AppImages.secondBackground),
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                height: MediaQuery.of(context).size.height,
-                width: 320,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(
-                          top: 120, bottom: 0, left: 20, right: 20),
+                          top: 120,left: 10, right: 10),
                       child: Container(
                         decoration: BoxDecoration(
                           color: Colors.blueGrey[50],
                           borderRadius: BorderRadius.circular(25),
                         ),
-                        padding: EdgeInsets.fromLTRB(
-                          20,
-                          5,
-                          20,
-                          5,
-                        ),
+                        padding: EdgeInsets.fromLTRB(20, 5, 20, 5),
                         child: Column(
                           children: [
                             TextFormField(

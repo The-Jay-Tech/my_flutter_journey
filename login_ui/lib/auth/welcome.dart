@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:login_ui/auth/sign_in.dart';
 import 'package:login_ui/styles/images.dart';
 import 'package:login_ui/styles/text.dart';
 import 'package:url_launcher/url_launcher.dart';
