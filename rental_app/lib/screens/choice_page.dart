@@ -69,7 +69,7 @@ class _ChoicePageState extends State<ChoicePage> {
                     fontSize: 14,
                     color: Colors.white,
                     height: 1.2,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w400,  // ngj
                   ),
                 ),
               ),
