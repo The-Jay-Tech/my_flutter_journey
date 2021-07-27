@@ -13,4 +13,21 @@ class AppTextStyle {
     color: Colors.grey,
     height: 1.2,
   );
+  final loginFont = GoogleFonts.notoSans(
+    fontSize: 20,
+    color: Colors.indigo[900],
+    height: 1.2,
+    fontWeight: FontWeight.w700,
+  );
+  final forgetPass = GoogleFonts.notoSans(
+    fontSize: 15,
+    color: Colors.teal[300],
+    height:1.2,
+    fontWeight: FontWeight.w500,
+  );
+  final movieFont = GoogleFonts.notoSans(
+    fontSize: 18,
+    color: Colors.white,
+    fontWeight: FontWeight.w700,
+  );
 }
