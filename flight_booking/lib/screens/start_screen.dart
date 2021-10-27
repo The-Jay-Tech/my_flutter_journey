@@ -40,6 +40,7 @@ class StartScreen extends StatelessWidget {
                         'To Fly',
                         style: AppTextStyle().titleStyle,
                       ),
+                      SizedBox(height: 20),
                       Text(
                         'Booking and saving made easy',
                         style: AppTextStyle().subStyle,

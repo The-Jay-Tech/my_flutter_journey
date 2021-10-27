@@ -23,8 +23,7 @@ class _SignUpState extends State<SignUp> {
             image: DecorationImage(
                 image: AssetImage(AppImages.secondScreen), fit: BoxFit.cover),
           ),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 50, 20, 10),
+          child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,158 +34,153 @@ class _SignUpState extends State<SignUp> {
                           MaterialPageRoute(builder: (_) => HomeScreen()));
                     },
                     icon: Icon(Icons.arrow_back, color: Colors.white)),
-                Text(
-                  'Create Account',
-                  style: AppTextStyle().titleStyle,
-                ),
-                Text('Please fill the input below here',
-                    style: AppTextStyle().subStyle),
-                Padding(padding: const EdgeInsets.fromLTRB(20, 30, 20, 10)),
-                Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: TextFormField(
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Create Account',
+                        style: AppTextStyle().titleStyle,
+                      ),
+                      SizedBox(height: 5),
+                      Text('Please fill the input below here',
+                          style: AppTextStyle().subStyle),
+                      SizedBox(height: 50),
+                      Column(
+                        children: [
+                          TextFormField(
+                            decoration: InputDecoration(
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                              fillColor: Colors.blueGrey[900],
+                              focusColor: Colors.blueGrey[900],
+                              prefixIcon: Icon(
+                                Icons.person,
+                                color: Colors.white,
+                              ),
+                              hintText: 'Full Name',
+                              hintStyle: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
                         decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10)),
                           fillColor: Colors.blueGrey[900],
                           focusColor: Colors.blueGrey[900],
                           prefixIcon: Icon(
-                            Icons.person,
+                            Icons.phone_android,
                             color: Colors.white,
                           ),
-                          hintText: 'Full Name',
+                          hintText: 'Phone',
                           hintStyle: TextStyle(
                             color: Colors.white,
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      fillColor: Colors.blueGrey[900],
-                      focusColor: Colors.blueGrey[900],
-                      prefixIcon: Icon(
-                        Icons.phone_android,
-                        color: Colors.white,
-                      ),
-                      hintText: 'Phone',
-                      hintStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      fillColor: Colors.blueGrey[900],
-                      focusColor: Colors.blueGrey[900],
-                      prefixIcon: Icon(
-                        Icons.mail,
-                        color: Colors.white,
-                      ),
-                      hintText: 'Email',
-                      hintStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      fillColor: Colors.blueGrey[900],
-                      focusColor: Colors.blueGrey[900],
-                      prefixIcon: Icon(
-                        Icons.lock_sharp,
-                        color: Colors.white,
-                      ),
-                      hintText: 'Password',
-                      hintStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10)),
-                      fillColor: Colors.blue[900],
-                      focusColor: Colors.blueGrey[900],
-                      prefixIcon: Icon(
-                        Icons.lock,
-                        color: Colors.white,
-                      ),
-                      hintText: 'Confirm Password',
-                      hintStyle: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(80, 20, 80, 5),
-                  child: MaterialButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (_) => MainScreen()));
-                    },
-                    color: Colors.tealAccent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    padding: EdgeInsets.fromLTRB(40, 30, 40, 30),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'SIGN UP',
-                          style: AppTextStyle().loginFont,
+                      SizedBox(height: 10),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          fillColor: Colors.blueGrey[900],
+                          focusColor: Colors.blueGrey[900],
+                          prefixIcon: Icon(
+                            Icons.mail,
+                            color: Colors.white,
+                          ),
+                          hintText: 'Email',
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(5, 10, 5, 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Already have an account? ",
-                        style: AppTextStyle().subStyle,
                       ),
-                      GestureDetector(
-                          onTap: () {
-                            Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => HomeScreen()));
-                          },
-                          child: Text(
-                            'Sign In',
-                            style: AppTextStyle().forgetPass,
-                          ))
+                      SizedBox(height: 10),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          fillColor: Colors.blueGrey[900],
+                          focusColor: Colors.blueGrey[900],
+                          prefixIcon: Icon(
+                            Icons.lock_sharp,
+                            color: Colors.white,
+                          ),
+                          hintText: 'Password',
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          focusedBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          fillColor: Colors.blue[900],
+                          enabled: true,
+                          focusColor: Colors.blueGrey[900],
+                          prefixIcon: Icon(
+                            Icons.lock,
+                            color: Colors.white,
+                          ),
+                          hintText: 'Confirm Password',
+                          hintStyle: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      MaterialButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (_) => MainScreen()));
+                        },
+                        color: Colors.tealAccent,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'SIGN UP',
+                              style: AppTextStyle().loginFont,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Already have an account? ",
+                            style: AppTextStyle().subStyle,
+                          ),
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => HomeScreen()));
+                              },
+                              child: Text(
+                                'Sign In',
+                                style: AppTextStyle().forgetPass,
+                              ))
+                        ],
+                      ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),

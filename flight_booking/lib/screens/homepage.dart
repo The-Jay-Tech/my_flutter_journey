@@ -27,11 +27,14 @@ class _HomePageState extends State<HomePage> {
         child: Container(
           height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.topLeft,
-              colors: [Colors.white10, Colors.white60],
+            image: DecorationImage(
+              image: AssetImage('assets/backk.jpg'),
+              fit: BoxFit.cover,
             ),
+            // gradient: LinearGradient(
+            //   begin: Alignment.centerLeft,
+            //   end: Alignment.topLeft,
+            //   colors: [Colors.white10, Colors.white],
           ),
           child: SingleChildScrollView(
             child: Padding(

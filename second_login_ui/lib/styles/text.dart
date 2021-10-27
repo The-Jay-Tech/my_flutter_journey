@@ -14,7 +14,7 @@ class AppTextStyle {
     height: 1.2,
   );
   final loginFont = GoogleFonts.notoSans(
-    fontSize: 20,
+    fontSize: 22,
     color: Colors.indigo[900],
     height: 1.2,
     fontWeight: FontWeight.w700,
