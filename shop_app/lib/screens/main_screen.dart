@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shop_app/screens/desserts/desserts_home.dart';
 import 'package:shop_app/screens/products.dart';
 
 class MainScreen extends StatefulWidget {
@@ -31,7 +32,12 @@ class _MainScreenState extends State<MainScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      const Icon(Icons.person),
+                      GestureDetector ( onTap: (){
+                        Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (_) => const DessertsHome()));
+                      }, child: const Icon(Icons.person)),
                       const Icon(Icons.lock),
                     ],
                   ),
@@ -88,10 +94,10 @@ class _MainScreenState extends State<MainScreen> {
                     Icon(Icons.filter_list)
                   ],
                 ),
-                shopThings(),
+                // Container(child: shopThings()),
               ],
             ),
-          ),;
+          ),
         ),
       ),
     );
@@ -104,7 +110,7 @@ class _MainScreenState extends State<MainScreen> {
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return Container(
-            height: 210,
+            height: 210, 
             width: 180,
             padding: const EdgeInsets.all(3),
             margin: const EdgeInsets.only(left: 4, right: 5),
@@ -130,8 +136,8 @@ class _MainScreenState extends State<MainScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('${shopList[index].title}'),
-                      Text('${shopList[index].price}'),
+                      Text(shopList[index].title),
+                      Text(shopList[index].price),
                     ],
                   ),
                 )

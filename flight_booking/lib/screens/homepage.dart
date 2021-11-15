@@ -98,49 +98,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildTour() {
-    return ListView.builder(
-        itemCount: tourData.length,
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return Container(
-            height: 210,
-            width: 180,
-            padding: EdgeInsets.all(3),
-            margin: EdgeInsets.only(left: 4, right: 5),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(22),
-            ),
-            child: Column(
-              children: [
-                Container(
-                  height: 180,
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(18),
-                    image: DecorationImage(
-                      image: AssetImage(tourData[index].img),
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text('${tourData[index].city}'),
-                      Text('${tourData[index].country}'),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          );
-        });
-  }
+  
 
   Widget buildBestTours() {
     return Container(
